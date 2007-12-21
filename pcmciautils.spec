@@ -7,6 +7,7 @@ Patch2:	pcmciautils-013-modalias.patch
 License: GPL
 Group: System/Kernel and hardware
 Url: http://www.kernel.org/pub/linux/utils/kernel/pcmcia/
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: byacc
 BuildRequires: libsysfs-devel
 BuildRequires: flex
