@@ -1,7 +1,7 @@
 Summary: Tools for the hotpluggable PCMCIA subsystem
 Name: pcmciautils
 Version: 014
-Release: %mkrel 4
+Release: %mkrel 5
 Source0: %{name}-%{version}.tar.bz2
 Patch2:	pcmciautils-013-modalias.patch
 License: GPL
