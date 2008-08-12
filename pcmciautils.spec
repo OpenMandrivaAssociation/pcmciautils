@@ -31,11 +31,11 @@ present since 2.6.13-rc1.
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %makeinstall_std
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 # write /etc/modprobe.preload.d/pcmcia file on migration from old pcmcia-cs
 %triggerpostun -p /usr/bin/perl -- pcmcia-cs, %{name} < 014-3mdv2007.0
@@ -54,4 +54,3 @@ harddrake::autoconf::pcmcia($controller && $controller->{driver});
 /sbin/pcmcia-check-broken-cis
 /sbin/pcmcia-socket-startup
 %{_mandir}/man*/*
-
