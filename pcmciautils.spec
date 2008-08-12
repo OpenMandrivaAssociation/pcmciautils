@@ -3,7 +3,6 @@ Name: pcmciautils
 Version: 015
 Release: %mkrel 1
 Source0: %{name}-%{version}.tar.bz2
-Patch2:	pcmciautils-013-modalias.patch
 License: GPL
 Group: System/Kernel and hardware
 Url: http://www.kernel.org/pub/linux/utils/kernel/pcmcia/
@@ -25,7 +24,6 @@ present since 2.6.13-rc1.
 
 %prep
 %setup -q
-%patch2 -p1 -b .modalias
 
 %build
 make ccdv
