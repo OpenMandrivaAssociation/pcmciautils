@@ -1,9 +1,10 @@
 Summary: Tools for the hotpluggable PCMCIA subsystem
 Name: pcmciautils
 Version: 015
-Release: %mkrel 1
+Release: %mkrel 2
 Source0: %{name}-%{version}.tar.bz2
 Patch0:	 pcmciautils-015-parallel.patch
+Patch1:	 pcmciautils-015-libudevdir.patch
 License: GPL
 Group: System/Kernel and hardware
 Url: http://www.kernel.org/pub/linux/utils/kernel/pcmcia/
@@ -26,6 +27,7 @@ present since 2.6.13-rc1.
 %prep
 %setup -q
 %patch0 -p1 -b .parallel
+%patch1 -p1 -b .libudevdir
 
 %build
 %make
@@ -51,6 +53,6 @@ harddrake::autoconf::pcmcia($controller && $controller->{driver});
 %{_sysconfdir}/udev/rules.d/60-pcmcia.rules
 /sbin/lspcmcia
 /sbin/pccardctl
-/sbin/pcmcia-check-broken-cis
-/sbin/pcmcia-socket-startup
+/lib/udev/pcmcia-check-broken-cis
+/lib/udev/pcmcia-socket-startup
 %{_mandir}/man*/*
