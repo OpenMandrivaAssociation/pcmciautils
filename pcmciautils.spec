@@ -1,7 +1,7 @@
 Summary: Tools for the hotpluggable PCMCIA subsystem
 Name: pcmciautils
 Version: 015
-Release: %mkrel 3
+Release: %mkrel 4
 Source0: %{name}-%{version}.tar.bz2
 Patch0:	 pcmciautils-015-parallel.patch
 Patch1:	 pcmciautils-015-libudevdir.patch
