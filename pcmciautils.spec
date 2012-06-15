@@ -22,7 +22,7 @@ present since 2.6.13-rc1.
 %setup -q
 
 %build
-%make V=1 OPTIMIZATION="%{optflags}" LDFLAGS="%{ldflags}"
+%make V=1 OPTIMIZATION="%{optflags}" LDFLAGS="%{ldflags}" STRIPCMD=/bin/true
 
 %install
 %makeinstall_std
