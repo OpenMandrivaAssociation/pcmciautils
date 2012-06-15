@@ -3,8 +3,6 @@ Name:		pcmciautils
 Version:	018
 Release:	1
 Source0:	%{name}-%{version}.tar.bz2
-Patch0:		pcmciautils-015-parallel.patch
-Patch1:		pcmciautils-015-libudevdir.patch
 License:	GPLv2
 Group:		System/Kernel and hardware
 Url:		http://www.kernel.org/pub/linux/utils/kernel/pcmcia/
@@ -23,8 +21,6 @@ present since 2.6.13-rc1.
 
 %prep
 %setup -q
-%patch0 -p1 -b .parallel~
-%patch1 -p1 -b .libudevdir~
 
 %build
 %make V=1 OPTIMIZATION="%{optflags}" LDFLAGS="%{ldflags}"
