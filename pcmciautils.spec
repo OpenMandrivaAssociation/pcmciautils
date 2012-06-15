@@ -12,7 +12,6 @@ BuildRequires:	byacc
 BuildRequires:	sysfsutils-devel
 BuildRequires:	flex
 %rename		pcmcia-cs
-Conflicts:	drakxtools-backend < 10.4.33-1mdv2007.0
 
 %description
 PCMCIAutils contains hotplug scripts and initialization tools
@@ -32,14 +31,6 @@ present since 2.6.13-rc1.
 
 %install
 %makeinstall_std
-
-# write /etc/modprobe.preload.d/pcmcia file on migration from old pcmcia-cs
-%triggerpostun -p /usr/bin/perl -- pcmcia-cs, %{name} < 014-3mdv2007.0
-use lib qw(/usr/lib/libDrakX);
-use harddrake::autoconf;
-use detect_devices;
-my $controller = detect_devices::pcmcia_controller_probe();
-harddrake::autoconf::pcmcia($controller && $controller->{driver});
 
 %files
 %config(noreplace) %{_sysconfdir}/pcmcia/config.opts
