@@ -1,19 +1,17 @@
-Summary: Tools for the hotpluggable PCMCIA subsystem
-Name: pcmciautils
-Version: 018
-Release: 1
-Source0: %{name}-%{version}.tar.bz2
-Patch0:	 pcmciautils-015-parallel.patch
-Patch1:	 pcmciautils-015-libudevdir.patch
-License: GPL
-Group: System/Kernel and hardware
-Url: http://www.kernel.org/pub/linux/utils/kernel/pcmcia/
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: byacc
-BuildRequires: sysfsutils-devel
-BuildRequires: flex
-Provides:     pcmcia-cs
-Obsoletes:     pcmcia-cs
+Summary:	Tools for the hotpluggable PCMCIA subsystem
+Name:		pcmciautils
+Version:	018
+Release:	1
+Source0:	%{name}-%{version}.tar.bz2
+Patch0:		pcmciautils-015-parallel.patch
+Patch1:		pcmciautils-015-libudevdir.patch
+License:	GPL
+Group:		System/Kernel and hardware
+Url:		http://www.kernel.org/pub/linux/utils/kernel/pcmcia/
+BuildRequires:	byacc
+BuildRequires:	sysfsutils-devel
+BuildRequires:	flex
+%rename		pcmcia-cs
 Conflicts:	drakxtools-backend < 10.4.33-1mdv2007.0
 
 %description
@@ -26,18 +24,14 @@ present since 2.6.13-rc1.
 
 %prep
 %setup -q
-%patch0 -p1 -b .parallel
-%patch1 -p1 -b .libudevdir
+%patch0 -p1 -b .parallel~
+%patch1 -p1 -b .libudevdir~
 
 %build
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
-
-%clean
-rm -rf %{buildroot}
 
 # write /etc/modprobe.preload.d/pcmcia file on migration from old pcmcia-cs
 %triggerpostun -p /usr/bin/perl -- pcmcia-cs, %{name} < 014-3mdv2007.0
@@ -48,7 +42,6 @@ my $controller = detect_devices::pcmcia_controller_probe();
 harddrake::autoconf::pcmcia($controller && $controller->{driver});
 
 %files
-%defattr(-,root,root)
 %config(noreplace) %{_sysconfdir}/pcmcia/config.opts
 %{_sysconfdir}/udev/rules.d/60-pcmcia.rules
 /sbin/lspcmcia
