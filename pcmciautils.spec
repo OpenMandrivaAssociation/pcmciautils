@@ -9,7 +9,6 @@ Url:		http://www.kernel.org/pub/linux/utils/kernel/pcmcia/
 BuildRequires:	byacc
 BuildRequires:	sysfsutils-devel
 BuildRequires:	flex
-%rename		pcmcia-cs
 
 %description
 PCMCIAutils contains hotplug scripts and initialization tools
