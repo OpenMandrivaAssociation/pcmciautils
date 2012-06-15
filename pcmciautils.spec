@@ -27,7 +27,7 @@ present since 2.6.13-rc1.
 %patch1 -p1 -b .libudevdir~
 
 %build
-%make
+%make V=1 OPTIMIZATION="%{optflags}" LDFLAGS="%{ldflags}"
 
 %install
 %makeinstall_std
