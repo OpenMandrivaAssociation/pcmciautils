@@ -10,7 +10,7 @@ Group: System/Kernel and hardware
 Url: http://www.kernel.org/pub/linux/utils/kernel/pcmcia/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: byacc
-BuildRequires: libsysfs-devel
+BuildRequires: sysfsutils-devel
 BuildRequires: flex
 Provides:     pcmcia-cs
 Obsoletes:     pcmcia-cs
