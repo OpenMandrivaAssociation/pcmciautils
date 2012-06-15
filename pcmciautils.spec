@@ -30,9 +30,9 @@ present since 2.6.13-rc1.
 
 %files
 %config(noreplace) %{_sysconfdir}/pcmcia/config.opts
-%{_sysconfdir}/udev/rules.d/60-pcmcia.rules
 /sbin/lspcmcia
 /sbin/pccardctl
+/lib/udev/rules.d/60-pcmcia.rules
 /lib/udev/pcmcia-check-broken-cis
 /lib/udev/pcmcia-socket-startup
 %{_mandir}/man*/*
