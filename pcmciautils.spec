@@ -5,7 +5,7 @@ Release:	1
 Source0:	%{name}-%{version}.tar.bz2
 Patch0:		pcmciautils-015-parallel.patch
 Patch1:		pcmciautils-015-libudevdir.patch
-License:	GPL
+License:	GPLv2
 Group:		System/Kernel and hardware
 Url:		http://www.kernel.org/pub/linux/utils/kernel/pcmcia/
 BuildRequires:	byacc
