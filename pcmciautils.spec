@@ -6,6 +6,7 @@ Source0:	%{name}-%{version}.tar.bz2
 License:	GPLv2
 Group:		System/Kernel and hardware
 Url:		http://www.kernel.org/pub/linux/utils/kernel/pcmcia/
+Patch0:		makefile_fix.patch
 BuildRequires:	byacc
 BuildRequires:	sysfsutils-devel
 BuildRequires:	flex
@@ -20,9 +21,10 @@ present since 2.6.13-rc1.
 
 %prep
 %setup -q
+%apply_patches
 
 %build
-%make V=1 OPTIMIZATION="%{optflags}" LDFLAGS="%{ldflags}" STRIPCMD=/bin/true
+%make LD=%{__cc} CC=%{__cc} V=1 OPTIMIZATION="%{optflags}" LDFLAGS="%{ldflags}" STRIPCMD=/bin/true
 
 %install
 %makeinstall_std
