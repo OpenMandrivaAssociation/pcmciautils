@@ -2,14 +2,14 @@ Summary:	Tools for the hotpluggable PCMCIA subsystem
 Name:		pcmciautils
 Version:	018
 Release:	1
-Source0:	%{name}-%{version}.tar.bz2
 License:	GPLv2
 Group:		System/Kernel and hardware
 Url:		http://www.kernel.org/pub/linux/utils/kernel/pcmcia/
+Source0:	%{name}-%{version}.tar.bz2
 Patch0:		makefile_fix.patch
 BuildRequires:	byacc
-BuildRequires:	sysfsutils-devel
 BuildRequires:	flex
+BuildRequires:	sysfsutils-devel
 
 %description
 PCMCIAutils contains hotplug scripts and initialization tools
@@ -37,3 +37,4 @@ present since 2.6.13-rc1.
 /lib/udev/pcmcia-check-broken-cis
 /lib/udev/pcmcia-socket-startup
 %{_mandir}/man*/*
+
