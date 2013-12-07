@@ -1,7 +1,7 @@
 Summary:	Tools for the hotpluggable PCMCIA subsystem
 Name:		pcmciautils
 Version:	018
-Release:	3
+Release:	4
 License:	GPLv2
 Group:		System/Kernel and hardware
 Url:		http://www.kernel.org/pub/linux/utils/kernel/pcmcia/
