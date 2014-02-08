@@ -1,7 +1,7 @@
 Summary:	Tools for the hotpluggable PCMCIA subsystem
 Name:		pcmciautils
 Version:	018
-Release:	1
+Release:	2
 Source0:	%{name}-%{version}.tar.bz2
 License:	GPLv2
 Group:		System/Kernel and hardware
