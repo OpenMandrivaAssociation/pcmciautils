@@ -21,7 +21,7 @@ present since 2.6.13-rc1.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 
 %build
 %make LD=%{__cc} CC=%{__cc} V=1 OPTIMIZATION="%{optflags}" LDFLAGS="%{ldflags}" STRIPCMD=/bin/true
