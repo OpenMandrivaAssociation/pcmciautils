@@ -1,7 +1,7 @@
 Summary:	Tools for the hotpluggable PCMCIA subsystem
 Name:		pcmciautils
 Version:	018
-Release:	13
+Release:	14
 License:	GPLv2
 Group:		System/Kernel and hardware
 Url:		http://www.kernel.org/pub/linux/utils/kernel/pcmcia/
@@ -24,17 +24,17 @@ present since 2.6.13-rc1.
 %autopatch -p1
 
 %build
-%make LD=%{__cc} CC=%{__cc} V=1 OPTIMIZATION="%{optflags}" LDFLAGS="%{ldflags}" STRIPCMD=/bin/true
+%make LD=%{__cc} CC=%{__cc} V=1 OPTIMIZATION="%{optflags}" LDFLAGS="%{ldflags}" STRIPCMD=true prefix=%{_prefix} sbindir=%{_bindir} mandir=%{_mandir} etcdir=%{_sysconfdir}
 
 %install
-%makeinstall_std
+%make_install prefix=%{_prefix} sbindir=%{_bindir} mandir=%{_mandir} etcdir=%{_sysconfdir}
 
 %files
 %config(noreplace) %{_sysconfdir}/pcmcia/config.opts
-/sbin/lspcmcia
-/sbin/pccardctl
-/lib/udev/rules.d/60-pcmcia.rules
-/lib/udev/pcmcia-check-broken-cis
-/lib/udev/pcmcia-socket-startup
+%{_bindir}/lspcmcia
+%{_bindir}/pccardctl
+%{_prefix}/lib/udev/rules.d/60-pcmcia.rules
+%{_prefix}/lib/udev/pcmcia-check-broken-cis
+%{_prefix}/lib/udev/pcmcia-socket-startup
 %{_mandir}/man*/*
 
