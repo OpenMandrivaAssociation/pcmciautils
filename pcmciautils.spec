@@ -24,7 +24,7 @@ present since 2.6.13-rc1.
 %autopatch -p1
 
 %build
-%make LD=%{__cc} CC=%{__cc} V=1 OPTIMIZATION="%{optflags}" LDFLAGS="%{ldflags}" STRIPCMD=true prefix=%{_prefix} sbindir=%{_bindir} mandir=%{_mandir} etcdir=%{_sysconfdir}
+%make LD=%{__cc} CC=%{__cc} YACC=byacc V=1 OPTIMIZATION="%{optflags}" LDFLAGS="%{ldflags}" STRIPCMD=true prefix=%{_prefix} sbindir=%{_bindir} mandir=%{_mandir} etcdir=%{_sysconfdir}
 
 %install
 %make_install prefix=%{_prefix} sbindir=%{_bindir} mandir=%{_mandir} etcdir=%{_sysconfdir}
