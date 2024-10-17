@@ -4,7 +4,7 @@ Version:	018
 Release:	15
 License:	GPLv2
 Group:		System/Kernel and hardware
-Url:		http://www.kernel.org/pub/linux/utils/kernel/pcmcia/
+Url:		https://www.kernel.org/pub/linux/utils/kernel/pcmcia/
 Source0:	%{name}-%{version}.tar.bz2
 Patch0:		makefile_fix.patch
 BuildRequires:	byacc
