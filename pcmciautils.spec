@@ -7,6 +7,7 @@ Group:		System/Kernel and hardware
 Url:		https://www.kernel.org/pub/linux/utils/kernel/pcmcia/
 Source0:	%{name}-%{version}.tar.bz2
 Patch0:		makefile_fix.patch
+BuildRequires:	make
 BuildRequires:	byacc
 BuildRequires:	flex
 BuildRequires:	sysfsutils-devel
